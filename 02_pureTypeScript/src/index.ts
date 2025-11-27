@@ -10,6 +10,7 @@
 //     }
 // }
 class User { 
+    // private _courseCount = 1
     protected _courseCount = 1
     constructor(
         public email: string, 
@@ -37,5 +38,15 @@ class User {
         this._courseCount = courseNum
     }
 }
+
+class SubUser extends User {
+    // private _courseCount = 1 cant access private property from parent class
+    isFamily: boolean = true
+    changeCourseCount(){
+        this._courseCount = 4
+    }
+}
+
+
 // User.city = "New York"; // Error: Cannot assign to 'city' because it is a read-only property.
 const zavyar = new User("zavyar@example.com", "Zavyar");
